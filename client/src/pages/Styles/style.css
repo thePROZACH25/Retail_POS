@@ -1,0 +1,8 @@
+.box1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    border: 3px solid green; 
+    text-align: center;
+}
