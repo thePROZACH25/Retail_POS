@@ -8,10 +8,10 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node scripts/retailPOS.js",
+    "seed": "node scripts/productAPI.js && node scripts/customerSeed.js && node scripts/employeeSeed.js && node scripts/transactionSeed.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build && node scripts/retailPOS.js"
+    "heroku-postbuild": "npm run build && node scripts/productAPI.js && node scripts/employeeSeed.js && node scripts/customerSeed.js && node scripts/transactionSeed.js"
   },
   "author": "",
   "license": "ISC",
