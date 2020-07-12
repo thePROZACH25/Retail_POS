@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/retailPOS");
+
+
 
 const employeeSeed = [
   {
@@ -94,16 +97,24 @@ const transactionSeed = [
   },
 ];
 
-db.Employee.remove({})
-  .then(() => db.Employee.collection.insertMany(employeeSeed))
-  .then((data) => {
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
+db.Employee.countDocuments().then(count => {
+  console.log(count)
+  if(count> 0){
+    console.log("employee")
+  }else{
+    // db.Employee.remove({})
+    // .then(() =>
+    db.Employee.collection.insertMany(employeeSeed)
+    .then((data) => {
+      console.log(data.result.n + " records inserted!");
+      process.exit(0);
+    })
+    .catch((err) => {
+      console.error(err);
+      process.exit(1);
+    });
+  }
+});
 
 db.Customer.remove({})
   .then(() => db.Customer.collection.insertMany(customerSeed))
