@@ -16,6 +16,7 @@ const transactionSchema = new Schema({
   },
   items: [
     {
+     
       name: {
         type: String,
         required: true,
