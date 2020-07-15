@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import GreetingMessage from "../components/Greeting/GreetingMessage";
-import LoginPage from "../components/LoginPage/LoginPage";
-import "./Styles/style.css"
+import GreetingMessage from "../components/GreetingMessage";
+import LoginInput from "../components/LoginInput";
+import "./Styles/style.css";
 
 class Login extends Component {
   render() {
     return (
-      <container className="box1">
-        <GreetingMessage /> 
-        <LoginPage />
-      </container>
+      <div className="container p-3 my-3 border col-10">
+        
+          <GreetingMessage />
+          <LoginInput />
+        
+      </div>
     );
   }
 }

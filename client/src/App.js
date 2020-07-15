@@ -1,24 +1,130 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "./pages/Login";
-// import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/books" component={Login} />
-          {/* <Route exact path="/books/:id" component={Detail} /> */}
-          <Route component={NoMatch} />
-        </Switch>
-      </div>
-    </Router>
-  );
+// Pages(Routes)
+import WelcomePage from "./WelcomePage";
+// import Login from "./pages/Login";
+import MainMenu from "./pages/MainMenu";
+// import POS from "./pages/Pos";
+// import Sells from "./pages/Sells";
+// import Employee from "./pages/Employee";
+// import CustomerInfo from "./pages/CustomerInfo";
+// import TransHistory from "./pages/TransHistory";
+import NoMatch from "./pages/NoMatch";
+
+// Components
+import Nav from "./components/Nav";
+import Employee from "./utils/Employee";
+
+class App extends Component {
+  state = {
+    employee: [
+      {
+        name: "",
+        employeeNum: "",
+        password: "",
+      },
+    ],
+  };
+
+  componentDidMount = () => {
+    this.loadEmpl();
+  };
+
+  loadEmpl = () => {
+    Employee.getEmployees()
+      .then((res) => {
+        const data = res.data;
+        data.map((data) =>
+          this.setState({
+            employee: {
+              name: data.name,
+              employeeNum: data.employeeNum,
+              password: data.password,
+            },
+          })
+        );
+      })
+      .catch(() => {
+        console.log("could not find data");
+      });
+  };
+
+  render() {
+    return (
+      <Router>
+        <div className="col-lg-12">
+          <Nav />
+
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <React.Fragment>
+                {/* <Login /> */}
+                <WelcomePage />
+              </React.Fragment>
+            )}
+          />
+          <Route
+            exact
+            path="/mainmenu"
+            render={(props) => (
+              <React.Fragment>
+                <MainMenu />
+              </React.Fragment>
+            )}
+          />
+          {/* <Route
+            exact
+            path="/pos"
+            render={(props) => (
+              <React.Fragment>
+                <POS />
+              </React.Fragment>
+            )}
+          />
+         <Route
+            exact
+            path="/sells"
+            render={(props) => (
+              <React.Fragment>
+                <Sells />
+              </React.Fragment>
+            )}
+          />
+         <Route
+            exact
+            path="/employee"
+            render={(props) => (
+              <React.Fragment>
+                <Employee />
+              </React.Fragment>
+            )}
+          />
+         <Route
+            exact
+            path="/customerInfo"
+            render={(props) => (
+              <React.Fragment>
+                <CustomerInfo />
+              </React.Fragment>
+            )}
+          />
+         <Route
+            exact
+            path="/transHistory"
+            render={(props) => (
+              <React.Fragment>
+                <TransHistory />
+              </React.Fragment>
+            )}
+          /> */}
+          <Route path=" " component={NoMatch} />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
