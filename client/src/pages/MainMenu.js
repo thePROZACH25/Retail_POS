@@ -1,14 +1,19 @@
-import React, { Component } from 'react'
-import MenuOps from '../components/MenuOps';
+import React from "react";
+import Container from "@material-ui/core/Container";
+import MenuOps from "../components/MenuOps";
 
-class MainMenu extends Component {
-    render() {
-        return (
-            <div>
-                <MenuOps/>
-            </div>
-        )
-    }
+function MainMenu() {
+  return (
+    <div>
+      <Container maxWidth="xs" style={box1}>
+        <MenuOps />
+      </Container>
+    </div>
+  );
+}
+
+const box1 ={
+    padding: "100px"
 }
 
 export default MainMenu;

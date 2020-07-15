@@ -61,7 +61,6 @@ class App extends Component {
             path="/"
             render={(props) => (
               <React.Fragment>
-                {/* <Login /> */}
                 <WelcomePage />
               </React.Fragment>
             )}

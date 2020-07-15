@@ -1,25 +1,67 @@
-import React, { Component } from 'react'
+import React from "react";
+import Button from "@material-ui/core/Button";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import { makeStyles } from "@material-ui/core/styles";
 
- class MenuOps extends Component {
-    render() {
-        return (
-            <div className="col-lg-4 justify-center">
-                <a style={menuStyle} href="/pos">POS</a>
-                <br></br>
-                <a style={menuStyle} href="/sells">SELLS</a>
-                <br></br>
-                <a style={menuStyle} href="/employee">EMPLOYEES</a>
-                <br></br>
-                <a style={menuStyle} href="/customerInfo">CUSTOMER INFO</a>
-                <br></br>
-                <a style={menuStyle} href="/transHistory">TRANSACTION HISTORY</a>
-            </div>
-        )
-    }
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+    width: 300,
+    border: 100,
+    borderRadius: 4,
+    boxShadow: "0 3px 5px 2px rgba(25, 105, 135, .3)",
+    color: "white",
+    height: 300,
+    padding: "30px 40px",
+  },
+}));
+
+function MenuOps() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <ButtonGroup
+        orientation="vertical"
+        color="primary"
+        aria-label="vertical contained primary button group"
+        variant="text"
+        size="large"
+      >
+        <Button>
+          <a style={href} href="/pos">
+            POS
+          </a>
+        </Button>
+        <Button>
+          <a style={href} href="/sells">
+            SELLS
+          </a>
+        </Button>
+        <Button>
+          <a style={href} href="/transHistory">
+            TRANSCTION HISTORY
+          </a>
+        </Button>
+        <Button>
+          <a style={href} href="/customerInfo">
+            CUSTOMER INFO
+          </a>
+        </Button>
+        <Button>
+          <a style={href} href="/employee">
+            EMPLOYEE INFO
+          </a>
+        </Button>
+      </ButtonGroup>
+    </div>
+  );
 }
 
-const menuStyle ={
-    color: "darkBlue"
-}
+const href = {
+  color: "blue",
+};
 
 export default MenuOps;
