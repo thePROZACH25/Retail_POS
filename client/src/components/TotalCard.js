@@ -52,7 +52,7 @@ function TotalCard() {
           size="large"
           style={{ position: "relative", bottom: "-10px", width: "100%" }}
         >
-          Primary
+          Confirm Purchese
         </Button>
       </CardActions>
     </Card>
