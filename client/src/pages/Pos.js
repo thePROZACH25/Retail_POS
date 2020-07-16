@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import SearchItem from "../components/SearchItem";
 import TotalCard from "../components/TotalCard";
 import PurcheseList from "../components/PurcheseList";
+import CustomerCard from "../components/CustomerCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,8 +44,8 @@ function Pos() {
           >
             <PurcheseList />
           </Grid>
-          <Grid item xs style={{ height: "365px", background: "purple" }}>
-            <Paper className={classes.paper}>Customer Info</Paper>
+          <Grid item xs style={{ height: "365px" }}>
+            <CustomerCard />
           </Grid>
         </Grid>
       </div>
