@@ -18,6 +18,7 @@ const useStyles = makeStyles({
 
 function WelcomePage() {
   const classes = useStyles();
+  
   return (
     <div>
       <div style={box1}>

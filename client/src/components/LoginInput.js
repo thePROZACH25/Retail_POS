@@ -9,14 +9,14 @@ class LoginInput extends React.Component {
   handleChange = (e) => {
     // console.log(e.target.name);
     this.setState({
-      [e.target.name]: e.target.value
-    })
+      [e.target.name]: e.target.value,
+    });
   };
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(this.state)
-  }
+    e.preventDefault();
+    console.log(this.state);
+  };
 
   render() {
     return (
@@ -51,7 +51,7 @@ class LoginInput extends React.Component {
             />
           </div>
           <div>
-            <button  type="submit" className="btn btn-primary mb-2">
+            <button type="submit" className="btn btn-primary mb-2">
               Confirm identity
             </button>
           </div>

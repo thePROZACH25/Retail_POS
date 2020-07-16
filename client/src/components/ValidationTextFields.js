@@ -1,10 +1,10 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiTextField-root': {
+    "& .MuiTextField-root": {
       margin: theme.spacing(1),
       width: 200,
     },
@@ -16,21 +16,22 @@ function ValidationTextFields() {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-
       <div>
         <TextField
-          error
-          id="outlined-error"
+          id="emplNum"
+          // onChange={this.handleChange}
+          name="password"
           label="Employee #"
-          defaultValue="Hello World"
+          value=""
           variant="outlined"
         />
         <TextField
-          error
-          id="outlined-error-helper-text"
+          id="password"
+          // onChange={this.handleChange}
+          name="password"
+          type="password"
           label="Password"
-          defaultValue="Hello World"
-          helperText="Incorrect entry."
+          value=""
           variant="outlined"
         />
       </div>

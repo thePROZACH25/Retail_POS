@@ -7,10 +7,8 @@ class Login extends Component {
   render() {
     return (
       <div className="container p-3 my-3 border col-10">
-        
-          <GreetingMessage />
-          <LoginInput />
-        
+        <GreetingMessage />
+        <LoginInput />
       </div>
     );
   }
