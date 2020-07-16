@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import WelcomePage from "./WelcomePage";
 // import Login from "./pages/Login";
 import MainMenu from "./pages/MainMenu";
-// import POS from "./pages/Pos";
+import POS from "./pages/Pos";
 // import Sells from "./pages/Sells";
 // import Employee from "./pages/Employee";
 // import CustomerInfo from "./pages/CustomerInfo";
@@ -74,7 +74,7 @@ class App extends Component {
               </React.Fragment>
             )}
           />
-          {/* <Route
+          <Route
             exact
             path="/pos"
             render={(props) => (
@@ -83,7 +83,7 @@ class App extends Component {
               </React.Fragment>
             )}
           />
-         <Route
+         {/* <Route
             exact
             path="/sells"
             render={(props) => (
