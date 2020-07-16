@@ -3,8 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import SearchItem from "../components/SearchItem";
-import TotalCard from "../components/TotalCard"
-
+import TotalCard from "../components/TotalCard";
+import PurcheseList from "../components/PurcheseList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,9 +25,9 @@ function Pos() {
       <div className={classes.root}>
         <Grid container spacing={3}>
           <Grid item xs={8} style={{ height: "20%" }}>
-            <SearchItem/>
+            <SearchItem />
           </Grid>
-          <Grid item xs style={{ height: "300px"}}>
+          <Grid item xs style={{ height: "300px" }}>
             <TotalCard />
           </Grid>
         </Grid>
@@ -37,12 +37,11 @@ function Pos() {
             xs={8}
             style={{
               height: "575px",
-              background: "green",
               position: "relative",
               top: "-210px",
             }}
           >
-            <Paper className={classes.paper}>Products</Paper>
+            <PurcheseList />
           </Grid>
           <Grid item xs style={{ height: "365px", background: "purple" }}>
             <Paper className={classes.paper}>Customer Info</Paper>
