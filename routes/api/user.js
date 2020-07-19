@@ -38,8 +38,8 @@ router.post('/signup', (req, res) => {
 router.post('/signin', (req, res) => {
   const employeeNum = req.body.employeeNum;
   const password = req.body.password;
-  // Find user by email
-  User.findOne({ email }).then(user => {
+  // Find user by employeeNum
+  User.findOne({ employeeNum }).then(user => {
     // Check for user
     if (!user) {
       return res.status(404).json({error:'User not found'});

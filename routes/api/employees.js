@@ -7,6 +7,9 @@ router.route("/").get(employeeController.findAll);
 // Matches with "/api/employees/signup"
 router.route("/signup").post(employeeController.create);
 
+// Matches with "/api/employees/signin"
+router.route("/signin").post(employeeController.findAll);
+
 // Matches with "/api/employees/:id"
 router
   .route("/:id")
