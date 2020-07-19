@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
 function WelcomePage() {
   const classes = useStyles();
-  
+
   return (
     <div>
       <div style={box1}>
@@ -40,8 +40,8 @@ const box1 = {
   padding: "20px",
 };
 
-const box2 ={
-    padding: "20px"
-}
+const box2 = {
+  padding: "20px",
+};
 
 export default WelcomePage;

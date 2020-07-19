@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Pages(Routes)
 import WelcomePage from "./WelcomePage";
-// import Login from "./pages/Login";
 import MainMenu from "./pages/MainMenu";
 import POS from "./pages/Pos";
 // import Sells from "./pages/Sells";
@@ -61,7 +60,7 @@ class App extends Component {
             path="/"
             render={(props) => (
               <React.Fragment>
-                <WelcomePage />
+                <WelcomePage loadEmpl={this.props.loadEmpl}/>
               </React.Fragment>
             )}
           />

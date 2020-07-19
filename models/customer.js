@@ -15,6 +15,7 @@ const customerSchema = new Schema({
     required: true,
   },
   coupons: [
+    
     {
       type: Number,
       required: true,
