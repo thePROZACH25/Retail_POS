@@ -2,9 +2,10 @@ const router = require("express").Router();
 const employeeController = require("../../controllers/employeeController");
 
 // Matches with "/api/employees"
-router.route("/")
-  .get(employeeController.findAll)
-  .post(employeeController.create);
+router.route("/").get(employeeController.findAll);
+
+// Matches with "/api/employees/signup"
+router.route("/signup").post(employeeController.create);
 
 // Matches with "/api/employees/:id"
 router
