@@ -36,7 +36,7 @@ function CustomerCard() {
         <hr />
       </CardContent>
       <CardActions>
-        <Button size="small">Coupons</Button>
+        <Button size="small">Random customer info</Button>
       </CardActions>
     </Card>
   );

@@ -23,10 +23,7 @@ function WelcomePage() {
     <div>
       <div style={box1}>
         <div style={box2}>
-          <Typography align="center">
-            <h3>Welcome</h3>
-            <h5>Please Signin</h5>
-          </Typography>
+          <Typography align="center">Welcome Please Signin</Typography>
         </div>
         <Container className={classes.root}>
           <ValidationTextFields />

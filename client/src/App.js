@@ -13,41 +13,41 @@ import NoMatch from "./pages/NoMatch";
 
 // Components
 import Nav from "./components/Nav";
-import Employee from "./utils/Employee";
+// import Employee from "./utils/Employee";
 
 class App extends Component {
-  state = {
-    employee: [
-      {
-        name: "",
-        employeeNum: "",
-        password: "",
-      },
-    ],
-  };
+  // state = {
+  //   employee: [
+  //     {
+  //       name: "",
+  //       employeeNum: "",
+  //       password: "",
+  //     },
+  //   ],
+  // };
 
-  componentDidMount = () => {
-    this.loadEmpl();
-  };
+  // componentDidMount = () => {
+  //   this.loadEmpl();
+  // };
 
-  loadEmpl = () => {
-    Employee.getEmployees()
-      .then((res) => {
-        const data = res.data;
-        data.map((data) =>
-          this.setState({
-            employee: {
-              name: data.name,
-              employeeNum: data.employeeNum,
-              password: data.password,
-            },
-          })
-        );
-      })
-      .catch(() => {
-        console.log("could not find data");
-      });
-  };
+  // loadEmpl = () => {
+  //   Employee.getEmployees()
+  //     .then((res) => {
+  //       const data = res.data;
+  //       data.map((data) =>
+  //         this.setState({
+  //           employee: {
+  //             name: data.name,
+  //             employeeNum: data.employeeNum,
+  //             password: data.password,
+  //           },
+  //         })
+  //       );
+  //     })
+  //     .catch(() => {
+  //       console.log("could not find data");
+  //     });
+  // };
 
   render() {
     return (
@@ -60,7 +60,7 @@ class App extends Component {
             path="/"
             render={(props) => (
               <React.Fragment>
-                <WelcomePage loadEmpl={this.props.loadEmpl}/>
+                <WelcomePage />
               </React.Fragment>
             )}
           />

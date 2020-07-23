@@ -36,6 +36,7 @@ router.post('/signup', (req, res) => {
 // @desc    Signin User / Returning JWT Token
 // @access  Public
 router.post('/signin', (req, res) => {
+  console.log(req.body)
   const employeeNum = req.body.employeeNum;
   const password = req.body.password;
   // Find user by employeeNum
